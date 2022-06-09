@@ -12,8 +12,12 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^2.0.6",
+    "@growthbunker/vueflags": "^0.1.14",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "country-language": "^0.1.7",
+    "vue": "^2.6.14",
+    "vue-country-flag": "^2.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

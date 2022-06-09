@@ -1,9 +1,13 @@
 <template>
-  <main></main>
+  <main>
+    <OrgList />
+  </main>
 </template>
 
 <script>
+import OrgList from "../organism/OrgList.vue";
 export default {
+  components: { OrgList },
   name: "TmpMain",
 };
 </script>

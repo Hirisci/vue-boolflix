@@ -1,15 +1,15 @@
 <template>
   <header>
-    <ALogo />
-    <AHiddenSearchBar />
+    <AtmLogo />
+    <MlcSearchBar />
   </header>
 </template>
 
 <script>
-import AHiddenSearchBar from "../atom/AHiddenSearchBar.vue";
-import ALogo from "../atom/ALogo.vue";
+import AtmLogo from "../atom/AtmLogo.vue";
+import MlcSearchBar from "../molecule/MlcSearchBar.vue";
 export default {
-  components: { ALogo, AHiddenSearchBar },
+  components: { AtmLogo, MlcSearchBar },
   name: "TmpHeader",
 };
 </script>

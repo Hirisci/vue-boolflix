@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "ALogo",
+  name: "AtmLogo",
 };
 </script>
 
