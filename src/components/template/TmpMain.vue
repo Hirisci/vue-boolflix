@@ -1,6 +1,7 @@
 <template>
   <main>
-    <OrgList title="Film per te" :films="array.film" />
+    <OrgList type="film" title="Film per te" :films="array.film" />
+    <OrgList type="series" title="Serie per te" :films="array.series" />
   </main>
 </template>
 

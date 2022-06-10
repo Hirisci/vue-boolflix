@@ -1,11 +1,14 @@
 <template>
   <div class="card-info">
-    <h3>{{ film.title }}</h3>
+    <h3>{{ film.name }}</h3>
     <p>{{ film.overview }}</p>
     <div class="card-info_detail">
       <div>
-        <span v-for="n in getVote(film.vote_average)" :key="n">
-          <font-awesome-icon class="star" icon="fa-solid fa-star" />
+        <span v-for="n in 5" :key="n">
+          <font-awesome-icon
+            :class="{ star: getVote(film.vote_average) > n }"
+            icon="fa-solid fa-star"
+          />
         </span>
       </div>
       <country-flag
@@ -19,7 +22,7 @@
 
 <script>
 export default {
-  name: "MlcCardHover",
+  name: "MlcCardSeriesHover",
   props: {
     film: Object,
   },

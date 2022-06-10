@@ -1,16 +1,19 @@
 <template>
   <div class="card">
     <img class="card_img" :src="getImg(film.poster_path)" alt="" />
-    <MlcCardHover class="card_info" :film="film" />
+    <MlcCardFilmHover v-if="type === 'film'" class="card_info" :film="film" />
+    <MlcCardSeriesHover v-else class="card_info" :film="film" />
   </div>
 </template>
 
 <script>
-import MlcCardHover from "./MlcCardHover.vue";
+import MlcCardFilmHover from "./MlcCardFilmHover.vue";
+import MlcCardSeriesHover from "./MlcCardSeriesHover.vue";
 export default {
-  components: { MlcCardHover },
+  components: { MlcCardFilmHover, MlcCardSeriesHover },
   name: "MlcCard",
   props: {
+    type: String,
     film: Object,
   },
   methods: {

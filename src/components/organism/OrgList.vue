@@ -2,7 +2,7 @@
   <section>
     <h2>{{ title }}</h2>
     <div class="carousel">
-      <MlcCard v-for="film in films" :film="film" :key="film.id" />
+      <MlcCard :type="type" v-for="film in films" :film="film" :key="film.id" />
     </div>
   </section>
 </template>
@@ -14,6 +14,7 @@ export default {
   components: { MlcCard },
   name: "OrgList",
   props: {
+    type: String,
     films: array,
     title: String,
   },
@@ -29,7 +30,8 @@ section {
 }
 .carousel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 354px);
   grid-column: 32rem;
   gap: 1rem;
 }
