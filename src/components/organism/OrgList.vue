@@ -1,52 +1,36 @@
 <template>
-  <ul>
-    <li v-for="film in array.film" :key="film.id">
-      {{ film.original_title }}{{ film.title }}
-      <country-flag :country="film.original_language" size="normal" />
-      {{ film.original_language }}
-      <country-flag :country="flag(film.original_language)" size="normal" />
-      <img class="img" :src="getImg(film.poster_path)" alt="" />
-    </li>
-  </ul>
+  <section>
+    <h2>{{ title }}</h2>
+    <div class="carousel">
+      <MlcCard v-for="film in films" :film="film" :key="film.id" />
+    </div>
+  </section>
 </template>
 
 <script>
+import MlcCard from "../molecule/MlcCard.vue";
 import array from "../particles/array";
 export default {
+  components: { MlcCard },
   name: "OrgList",
-  data() {
-    return {
-      array,
-    };
-  },
-  methods: {
-    flag(code) {
-      switch (code) {
-        case "en":
-          return "gb";
-        case "ja":
-          return "jp";
-        default:
-          return code;
-      }
-    },
-    getImg(path) {
-      let prefix = "https://image.tmdb.org/t/p/w342";
-      return prefix + path;
-    },
+  props: {
+    films: array,
+    title: String,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-li {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  border: 1px solid red;
+section {
+  padding: var(--padding-md);
+  h2 {
+    padding: var(--padding-sm) 0;
+  }
 }
-
-img {
-  width: 342px;
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column: 32rem;
+  gap: 1rem;
 }
 </style>

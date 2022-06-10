@@ -1,14 +1,20 @@
 <template>
   <main>
-    <OrgList />
+    <OrgList title="Film per te" :films="array.film" />
   </main>
 </template>
 
 <script>
+import array from "../particles/array";
 import OrgList from "../organism/OrgList.vue";
 export default {
   components: { OrgList },
   name: "TmpMain",
+  data() {
+    return {
+      array,
+    };
+  },
 };
 </script>
 
